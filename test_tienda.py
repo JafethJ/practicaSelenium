@@ -1,12 +1,6 @@
 import pytest
 from selenium import webdriver
 from login_page import LoginPage # Usando el modelo POM que creamos antes
-@pytest.fixture 
-def driver():
-    """Configuración inicial del navegador (Fixture)""" 
-    driver = webdriver.Chrome()
-    yield driver 
-    driver.quit()
     
 def test_login_fallido(driver): 
     """Prueba de usuario bloqueado""" 

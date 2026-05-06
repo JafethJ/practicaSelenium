@@ -1,8 +1,7 @@
 from selenium import webdriver
 from login_page import LoginPage # Importamos nuestra clase
 
-def test_ejecucion_pom(): 
-    driver = webdriver.Chrome()
+def test_ejecucion_pom(driver): 
     driver.get("https://saucedemo.com")
 
     # Instanciamos la página
@@ -12,9 +11,10 @@ def test_ejecucion_pom():
     login.click_login()
     mensaje = login.obtener_error()
     print(f"Resultado de la prueba: {mensaje}")
-
-    driver.quit()
     
 if __name__ == "__main__":
-    test_ejecucion_pom()
+    # Para ejecutar manualmente
+    from selenium import webdriver
+    driver = webdriver.Chrome()
+    test_ejecucion_pom(driver)
 
