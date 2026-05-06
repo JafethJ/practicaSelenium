@@ -1,11 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By 
 import time
-# Configuración inicial 
-driver = webdriver.Chrome() 
-driver.implicitly_wait(10)
 
-def ejecutar_pruebas(): 
+def ejecutar_pruebas():
+    # Configuración inicial 
+    driver = webdriver.Chrome() 
+    driver.implicitly_wait(10) 
     try:
         # --- CASO 1: Login Exitoso --- print("Ejecutando Caso 1: Login...") 
         driver.get("https://saucedemo.com") 
@@ -40,7 +40,8 @@ def ejecutar_pruebas():
         print(f"❌ Error durante la ejecución: {e}")
     finally:
         driver.quit()
-        
+
+
 if __name__ == "__main__":
     ejecutar_pruebas()
     
